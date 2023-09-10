@@ -4,7 +4,7 @@ from airflow.models import DagBag
 class TestDagValidation:
 
     LOAD_SECOND_THRESHOLD = 2
-    REQUIRED_EMAIL = "airflow@airflow.com"
+    REQUIRED_EMAIL = "support@airflow.com"
     EXPECTED_NUMBER_OF_DAGS = 1
 
     def test_import_dags(self, dagbag):
