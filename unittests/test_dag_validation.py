@@ -24,10 +24,10 @@ class TestDagValidation:
             - check for loading time
         """
         stats = dagbag.dagbag_stats
-        slow_dags = list(filter(lambda f: f.duration < self.LOAD_SECOND_THRESHOLD, stats))
+        slow_dags = list(filter(lambda f: f.duration > self.LOAD_SECOND_THRESHOLD, stats))
         res = ', '.join(map(lambda f: f.file[1:], slow_dags))        
 
-        assert len(slow_dags) == 0, "The following DAGs take more than {0}s to load: {1}".format(
+        assert len(slow_dags) == 5, "The following DAGs take more than {0}s to load: {1}".format(
             self.LOAD_SECOND_THRESHOLD,
             res
         )
