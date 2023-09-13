@@ -1,6 +1,6 @@
 FROM apache/airflow:2.2.4-python3.8
 
-#LABEL version="1.0.0"
+LABEL version="1.0.0"
 
 RUN pip install --user pytest
 
